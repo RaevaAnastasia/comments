@@ -14,7 +14,7 @@ function Add (props) {
         e.target.value.trim().length > 0 ? setter(false) : setter(true);
     }
 
-    function showValue(e) {
+    function addItem(e) {
         e.preventDefault();
         let item = [{
             author: author.current.value,
@@ -23,9 +23,20 @@ function Add (props) {
         }];
         
         props.updateNews(item, props.data);
+        cleanForm();
     }
 
-    function onCheck (e) {
+    function cleanForm() {
+        author.current.value = "";
+        setIsAuthor(false);
+        text.current.value = "";
+        setIsText(false);
+        agree.current.checked = false;
+        setIsDisabled(true);
+        button.current.disabled = true;
+    }
+
+    function onCheck(e) {
        setIsDisabled(!isDisabled);
     }
 
@@ -48,10 +59,10 @@ function Add (props) {
                 defaultChecked={false}
                 ref={agree}
                 onChange={onCheck}/>
-                <label className="add__label" for="agree">Я согласен с правилами сообщества</label>
+                <label className="add__label" htmlFor="agree">Я согласен с правилами сообщества</label>
             </div>
             <button className="add__button" 
-            onClick={showValue} 
+            onClick={addItem} 
             ref={button} 
             disabled={isDisabled || isAuthor || isText}>Добавить комментарий</button>
         </form>
