@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import News from './News/News.js';
+import Add from './Add/Add.js';
+
+let newNews = [
+  {
+    author: 'Мистер Программистер',
+    text: 'Мое важное мнение таково:',
+    bigText: 'Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание дальнейших направлений развития. Равным образом реализация намеченных плановых заданий обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа направлений прогрессивного развития. Равным образом рамки и место обучения кадров требуют от нас анализа новых предложений. Товарищи! укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий.'
+  },
+  {
+    author: 'Маринка',
+    text: 'Я сама с ребёнком зарабатываю по 40т.р. ',
+    bigText: 'В месяц разобралась легко со своего смартфона просто заходите на мой профиль там я подробно расписала спасибо'
+  },
+  {
+    author: 'Гость',
+    text: 'Я зашел посмотреть и уже ухожу',
+    bigText: 'Честно говоря, просто тяну время чтобы не читать документацию'
+  }
+];
 
 function App() {
+  let [news, setNews] = useState(newNews);
+  function updateNews(member, array) {
+    let newNews = member.concat(array);
+    setNews(newNews);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3 className="App__title">Комментарии</h3>  
+      <Add updateNews={updateNews} data={news}/>    
+      <News data={news}/>
     </div>
   );
 }

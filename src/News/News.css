@@ -1,0 +1,28 @@
+.news {
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+
+.news__author {
+    font-weight: 600;
+    padding: 1rem;
+    margin: 0;
+}
+
+.news__wrap {
+    padding: 0;
+    margin-bottom: 2rem;
+    border-left: 7px solid orange;
+}
+
+.news__text {
+    padding: 1rem;
+}
+
+.news__readmore {
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 2px solid orange;
+    text-transform: uppercase;
+    margin-left: 1rem;
+}

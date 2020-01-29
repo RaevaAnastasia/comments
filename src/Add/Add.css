@@ -1,0 +1,51 @@
+.add {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.add__author-field {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 1rem;
+    color: black;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 1.6rem;
+}
+
+.add__text {
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding: 1rem;
+    resize: none;
+    color: black;
+    border: 2px solid black;
+    margin-bottom: 1rem;
+}
+
+.add__wrap {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.add__check {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 2px solid black;
+}
+
+.add__label {
+    font-size: 1.6rem;
+}
+
+.add__button {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 2rem;
+    border-radius: 4px;
+    width: 40%;
+}
