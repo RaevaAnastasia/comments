@@ -1,2 +1,2 @@
-#[Comments](https://raevaanastasia.github.io/comments/) - блок комментариев, реализованный на React.
+[Comments](https://raevaanastasia.github.io/comments/) - блок комментариев, реализованный на React.
 
